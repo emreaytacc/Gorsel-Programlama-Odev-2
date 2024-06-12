@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Emre.Sayfalar"
+             x:Class="Emre.Sayfalar.Kurlar">
+
+    <StackLayout Padding="10">
+        <Label Text="Altın ve Döviz Fiyatları" 
+               FontSize="24"
+               HorizontalOptions="Center"
+               Margin="0,20,0,20"/>
+
+        <Grid Padding="10" BackgroundColor="#2196F3" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Döviz Türü" Grid.Column="0" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Satış" Grid.Column="1" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Alış" Grid.Column="2" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Değişim" Grid.Column="3" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+        </Grid>
+
+        <CollectionView x:Name="CurrencyCollectionView" ItemsSource="{Binding Kurlar}" Margin="0,0,0,20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" Margin="0,5" BackgroundColor="#E0E0E0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Key}" Grid.Column="0" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding Value.Satis}" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding Value.Alis}" Grid.Column="2" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding Value.Degisim}"
+                               Grid.Column="3"
+                               TextColor="{Binding VAlue.Degisim, Converter={StaticResource ChangeColorConverter}}"
+                               HorizontalOptions="CenterAndExpand"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

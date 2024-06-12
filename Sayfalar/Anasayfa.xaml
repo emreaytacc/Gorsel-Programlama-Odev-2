@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Emre.Sayfalar.Anasayfa">
+
+    <Grid Padding="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image Source="profil.jpg" Aspect="AspectFit" Grid.Row="0" />
+
+        <Label Text="Emre Aytaç" FontSize="50" HorizontalOptions="Center" Grid.Row="1" Margin="0,0,0,40" />
+
+        <Label Text="20670310048 " FontSize="20" HorizontalOptions="Center" Grid.Row="2" Margin="10,10,10,50" />
+
+        <Label Text="Bartın Üniversitesi Bilgisayar Mühendisliği" FontSize="20" HorizontalOptions="Center" Grid.Row="3" Margin="0,0,0,40" />
+
+        <Label Text="ÖDEV-2" FontSize="30" HorizontalOptions="Center" Grid.Row="4" />
+    </Grid>
+
+</ContentPage>
